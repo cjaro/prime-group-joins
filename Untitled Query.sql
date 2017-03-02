@@ -125,9 +125,9 @@ ON orders.id=line_items.order_id;
 
 --3. Which warehouses have cheetos?
 SELECT * 
-FROM products
-JOIN warehouse_product ON products.id = warehouse_product.warehouse_id
-JOIN warehouse ON warehouse.id=warehouse_product.product_id
+FROM warehouse
+JOIN warehouse_product ON products.id = warehouse_product.product_id
+JOIN warehouse ON warehouse.id=warehouse_product.warehouse_id
 WHERE products.description='cheetos'
 ;
 
